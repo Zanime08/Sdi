@@ -5,14 +5,6 @@
         WindowStartupLocation="CenterScreen"
         Background="{DynamicResource Bg}">
 
-    <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/MainWindowResources.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>
-
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="220"/>
@@ -31,7 +23,7 @@
                         Style="{StaticResource ButtonMenu}" Click="SwithSelect">
                     <Image Source="/Assets/Image/characters.png"/>
                 </Button>
-                <TextBlock Text="Персонажи" HorizontalAlignment="Center" Foreground="White"/>
+                <TextBlock Text="Персонажи" HorizontalAlignment="Center" Foreground="{DynamicResource MenuText}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="1" x:Name="StackShop" Style="{StaticResource ElMenu}">
@@ -39,7 +31,7 @@
                         Style="{StaticResource ButtonMenu}" Click="SwithSelect">
                     <Image Source="/Assets/Image/shop.png"/>
                 </Button>
-                <TextBlock Text="Магазин" HorizontalAlignment="Center" Foreground="White"/>
+                <TextBlock Text="Магазин" HorizontalAlignment="Center" Foreground="{DynamicResource MenuText}"/>
             </StackPanel>
         </Grid>
 

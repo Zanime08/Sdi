@@ -11,33 +11,30 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Text="Список персонажей"
-                   FontSize="32" FontWeight="Bold" Foreground="{DynamicResource Text}" Margin="10"/>
+                   Style="{StaticResource PageTitle}"/>
 
         <ScrollViewer Grid.Row="1">
             <StackPanel>
 
-                <Border BorderBrush="{DynamicResource Border}" BorderThickness="1"
-                        Background="{DynamicResource Card}" Margin="10" Padding="12">
+                <Border Style="{StaticResource CharacterCard}">
                     <StackPanel>
-                        <TextBlock Text="Айронхарт" FontSize="22" FontWeight="Bold"/>
+                        <TextBlock Text="Айронхарт" Style="{StaticResource CharacterNameStyle}"/>
                         <TextBlock Text="Страж, ур. 42"/>
                         <TextBlock Text="Здоровье: 3200   Атака: 540   Защита: 780"/>
                     </StackPanel>
                 </Border>
 
-                <Border BorderBrush="{DynamicResource Border}" BorderThickness="1"
-                        Background="{DynamicResource Card}" Margin="10" Padding="12">
+                <Border Style="{StaticResource CharacterCard}">
                     <StackPanel>
-                        <TextBlock Text="Лунара" FontSize="22" FontWeight="Bold"/>
+                        <TextBlock Text="Лунара" Style="{StaticResource CharacterNameStyle}"/>
                         <TextBlock Text="Маг, ур. 38"/>
                         <TextBlock Text="Здоровье: 2100   Атака: 910   Защита: 320"/>
                     </StackPanel>
                 </Border>
 
-                <Border BorderBrush="{DynamicResource Border}" BorderThickness="1"
-                        Background="{DynamicResource Card}" Margin="10" Padding="12">
+                <Border Style="{StaticResource CharacterCard}">
                     <StackPanel>
-                        <TextBlock Text="Тенебра" FontSize="22" FontWeight="Bold"/>
+                        <TextBlock Text="Тенебра" Style="{StaticResource CharacterNameStyle}"/>
                         <TextBlock Text="Убийца, ур. 45"/>
                         <TextBlock Text="Здоровье: 1850   Атака: 1120   Защита: 260"/>
                     </StackPanel>

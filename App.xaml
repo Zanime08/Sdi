@@ -4,10 +4,11 @@
              xmlns:local="clr-namespace:Sdi"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <!-- Подключаем цветовую палитру на уровне всего приложения -->
+        <!-- Палитра и стили доступны окну и обеим страницам -->
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Palette.xaml"/>
+                <ResourceDictionary Source="/MainWindowResources.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

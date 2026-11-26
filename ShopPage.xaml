@@ -11,38 +11,35 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Text="Магазин персонажей"
-                   FontSize="32" FontWeight="Bold" Foreground="{DynamicResource Text}" Margin="10"/>
+                   Style="{StaticResource PageTitle}"/>
 
         <ScrollViewer Grid.Row="1">
             <StackPanel>
 
-                <Border BorderBrush="{DynamicResource Border}" BorderThickness="1"
-                        Background="{DynamicResource Card}" Margin="10" Padding="12">
+                <Border Style="{StaticResource CharacterCard}">
                     <StackPanel>
-                        <TextBlock Text="Селестия" FontSize="22" FontWeight="Bold"/>
+                        <TextBlock Text="Селестия" Style="{StaticResource CharacterNameStyle}"/>
                         <TextBlock Text="Целитель, ур. 35"/>
-                        <TextBlock Text="Цена: 1200" Foreground="{DynamicResource Gold}" FontWeight="Bold"/>
-                        <TextBlock Text="Купить"/>
+                        <TextBlock Text="Цена: 1200" Style="{StaticResource PriceStyle}"/>
+                        <TextBlock Text="Купить" Style="{StaticResource BuyLabelStyle}"/>
                     </StackPanel>
                 </Border>
 
-                <Border BorderBrush="{DynamicResource Border}" BorderThickness="1"
-                        Background="{DynamicResource Card}" Margin="10" Padding="12">
+                <Border Style="{StaticResource CharacterCard}">
                     <StackPanel>
-                        <TextBlock Text="Кратос" FontSize="22" FontWeight="Bold"/>
+                        <TextBlock Text="Кратос" Style="{StaticResource CharacterNameStyle}"/>
                         <TextBlock Text="Танк, ур. 50"/>
-                        <TextBlock Text="Цена: 2400" Foreground="{DynamicResource Gold}" FontWeight="Bold"/>
-                        <TextBlock Text="Купить"/>
+                        <TextBlock Text="Цена: 2400" Style="{StaticResource PriceStyle}"/>
+                        <TextBlock Text="Купить" Style="{StaticResource BuyLabelStyle}"/>
                     </StackPanel>
                 </Border>
 
-                <Border BorderBrush="{DynamicResource Border}" BorderThickness="1"
-                        Background="{DynamicResource Card}" Margin="10" Padding="12">
+                <Border Style="{StaticResource CharacterCard}">
                     <StackPanel>
-                        <TextBlock Text="Игнис" FontSize="22" FontWeight="Bold"/>
+                        <TextBlock Text="Игнис" Style="{StaticResource CharacterNameStyle}"/>
                         <TextBlock Text="Огнестрел, ур. 33"/>
-                        <TextBlock Text="Цена: 980" Foreground="{DynamicResource Gold}" FontWeight="Bold"/>
-                        <TextBlock Text="Купить"/>
+                        <TextBlock Text="Цена: 980" Style="{StaticResource PriceStyle}"/>
+                        <TextBlock Text="Купить" Style="{StaticResource BuyLabelStyle}"/>
                     </StackPanel>
                 </Border>
 
