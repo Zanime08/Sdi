@@ -1,0 +1,69 @@
+<Page x:Class="Sdi.SettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:Sdi"
+      mc:Ignorable="d"
+      d:DesignHeight="1080" d:DesignWidth="1640"
+      Background="{DynamicResource BrushBgApp}"
+      Title="Настройки">
+
+    <Page.Resources>
+        <Style x:Key="PageTitle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource BrushText}"/>
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style x:Key="PageSubtitle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource BrushTextMuted}"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="0,6,0,0"/>
+        </Style>
+        <Style x:Key="RowLabel" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource BrushText}"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="RowPanel" TargetType="StackPanel">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="Margin" Value="0,10"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid Margin="40">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="8,8,8,18">
+            <TextBlock Text="Настройки" Style="{StaticResource PageTitle}"/>
+            <TextBlock Text="Параметры приложения" Style="{StaticResource PageSubtitle}"/>
+        </StackPanel>
+
+        <Border Grid.Row="1" Background="{DynamicResource BrushCard}"
+                BorderBrush="{DynamicResource BrushCardBorder}" BorderThickness="1"
+                CornerRadius="16" Padding="30" Width="900" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+            <StackPanel>
+                <StackPanel Style="{StaticResource RowPanel}">
+                    <TextBlock Text="Звук" Style="{StaticResource RowLabel}" Width="300"/>
+                    <CheckBox IsChecked="True" VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Style="{StaticResource RowPanel}">
+                    <TextBlock Text="Полноэкранный режим" Style="{StaticResource RowLabel}" Width="300"/>
+                    <CheckBox IsChecked="True" VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Style="{StaticResource RowPanel}">
+                    <TextBlock Text="Показывать подсказки" Style="{StaticResource RowLabel}" Width="300"/>
+                    <CheckBox IsChecked="False" VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Style="{StaticResource RowPanel}">
+                    <TextBlock Text="Язык интерфейса" Style="{StaticResource RowLabel}" Width="300"/>
+                    <TextBlock Text="Русский" Foreground="{DynamicResource BrushAccent}" FontSize="22" VerticalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>
