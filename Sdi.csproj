@@ -14,10 +14,8 @@
   <ItemGroup>
     <None Remove="Assets\Image\characters.png" />
     <None Remove="Assets\Image\shop.png" />
-    <None Remove="Assets\Image\settings.png" />
     <Resource Include="Assets\Image\characters.png" />
     <Resource Include="Assets\Image\shop.png" />
-    <Resource Include="Assets\Image\settings.png" />
   </ItemGroup>
 
 </Project>

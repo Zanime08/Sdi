@@ -1,247 +1,49 @@
 <Page x:Class="Sdi.CharactersListPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:local="clr-namespace:Sdi"
-      mc:Ignorable="d"
-      d:DesignHeight="1080" d:DesignWidth="1640"
-      Background="{DynamicResource BrushBgApp}"
-      Title="Список персонажей">
+      Title="Персонажи"
+      Background="{DynamicResource Bg}">
 
-    <Page.Resources>
-        <!-- Карточка персонажа -->
-        <Style x:Key="CardStyle" TargetType="Border">
-            <Setter Property="Background" Value="{DynamicResource BrushCard}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource BrushCardBorder}"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="CornerRadius" Value="16"/>
-            <Setter Property="Padding" Value="22"/>
-            <Setter Property="Margin" Value="16"/>
-            <Setter Property="Width" Value="740"/>
-        </Style>
-
-        <!-- Заголовок раздела -->
-        <Style x:Key="PageTitle" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="{DynamicResource BrushText}"/>
-            <Setter Property="FontSize" Value="40"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-        </Style>
-
-        <!-- Подзаголовок -->
-        <Style x:Key="PageSubtitle" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="{DynamicResource BrushTextMuted}"/>
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="Margin" Value="0,6,0,0"/>
-        </Style>
-
-        <!-- Имя персонажа -->
-        <Style x:Key="CharName" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="{DynamicResource BrushText}"/>
-            <Setter Property="FontSize" Value="28"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-        </Style>
-
-        <!-- Класс персонажа -->
-        <Style x:Key="CharClass" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="{DynamicResource BrushAccent}"/>
-            <Setter Property="FontSize" Value="18"/>
-            <Setter Property="Margin" Value="0,2,0,0"/>
-        </Style>
-
-        <!-- Название характеристики -->
-        <Style x:Key="StatLabel" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="{DynamicResource BrushTextMuted}"/>
-            <Setter Property="FontSize" Value="16"/>
-        </Style>
-
-        <!-- Значение характеристики -->
-        <Style x:Key="StatValue" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="{DynamicResource BrushText}"/>
-            <Setter Property="FontSize" Value="18"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="HorizontalAlignment" Value="Right"/>
-        </Style>
-    </Page.Resources>
-
-    <!-- Контент разбит на фреймы (сетка) -->
-    <Grid Margin="40">
+    <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Фрейм-заголовок -->
-        <StackPanel Grid.Row="0" Margin="8,8,8,18">
-            <TextBlock Text="Список персонажей" Style="{StaticResource PageTitle}"/>
-            <TextBlock Text="Все персонажи и их характеристики" Style="{StaticResource PageSubtitle}"/>
-        </StackPanel>
+        <TextBlock Grid.Row="0" Text="Список персонажей"
+                   FontSize="32" FontWeight="Bold" Foreground="{DynamicResource Text}" Margin="10"/>
 
-        <!-- Фрейм с карточками персонажей -->
-        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
-            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        <ScrollViewer Grid.Row="1">
+            <StackPanel>
 
-                <!-- Персонаж 1 -->
-                <Border Style="{StaticResource CardStyle}">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Grid Grid.Column="0" Width="96" Height="96" Margin="0,0,22,0">
-                            <Ellipse Fill="{DynamicResource BrushAccent}"/>
-                            <TextBlock Text="А" Foreground="{DynamicResource BrushBgApp}"
-                                       FontSize="44" FontWeight="Bold"
-                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Grid>
-
-                        <StackPanel Grid.Column="1">
-                            <TextBlock Text="Айронхарт" Style="{StaticResource CharName}"/>
-                            <TextBlock Text="Страж · ур. 42" Style="{StaticResource CharClass}"/>
-
-                            <Grid Margin="0,14,0,0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/><ColumnDefinition Width="90"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/><RowDefinition/><RowDefinition/><RowDefinition/>
-                                </Grid.RowDefinitions>
-
-                                <TextBlock Grid.Row="0" Grid.Column="0" Text="Здоровье"     Style="{StaticResource StatLabel}"/>
-                                <TextBlock Grid.Row="0" Grid.Column="1" Text="3200"        Style="{StaticResource StatValue}"/>
-                                <TextBlock Grid.Row="1" Grid.Column="0" Text="Атака"        Style="{StaticResource StatLabel}"/>
-                                <TextBlock Grid.Row="1" Grid.Column="1" Text="540"         Style="{StaticResource StatValue}"/>
-                                <TextBlock Grid.Row="2" Grid.Column="0" Text="Защита"       Style="{StaticResource StatLabel}"/>
-                                <TextBlock Grid.Row="2" Grid.Column="1" Text="780"         Style="{StaticResource StatValue}"/>
-                                <TextBlock Grid.Row="3" Grid.Column="0" Text="Скорость"     Style="{StaticResource StatLabel}"/>
-                                <TextBlock Grid.Row="3" Grid.Column="1" Text="120"         Style="{StaticResource StatValue}"/>
-                            </Grid>
-                        </StackPanel>
-                    </Grid>
+                <Border BorderBrush="{DynamicResource Border}" BorderThickness="1"
+                        Background="{DynamicResource Card}" Margin="10" Padding="12">
+                    <StackPanel>
+                        <TextBlock Text="Айронхарт" FontSize="22" FontWeight="Bold"/>
+                        <TextBlock Text="Страж, ур. 42"/>
+                        <TextBlock Text="Здоровье: 3200   Атака: 540   Защита: 780"/>
+                    </StackPanel>
                 </Border>
 
-                <!-- Персонаж 2 -->
-                <Border Style="{StaticResource CardStyle}">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Grid Grid.Column="0" Width="96" Height="96" Margin="0,0,22,0">
-                            <Ellipse Fill="{DynamicResource BrushAccent2}"/>
-                            <TextBlock Text="Л" Foreground="White"
-                                       FontSize="44" FontWeight="Bold"
-                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Grid>
-
-                        <StackPanel Grid.Column="1">
-                            <TextBlock Text="Лунара" Style="{StaticResource CharName}"/>
-                            <TextBlock Text="Маг · ур. 38" Style="{StaticResource CharClass}"/>
-
-                            <Grid Margin="0,14,0,0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/><ColumnDefinition Width="90"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/><RowDefinition/><RowDefinition/><RowDefinition/>
-                                </Grid.RowDefinitions>
-
-                                <TextBlock Grid.Row="0" Grid.Column="0" Text="Здоровье"     Style="{StaticResource StatLabel}"/>
-                                <TextBlock Grid.Row="0" Grid.Column="1" Text="2100"        Style="{StaticResource StatValue}"/>
-                                <TextBlock Grid.Row="1" Grid.Column="0" Text="Атака"        Style="{StaticResource StatLabel}"/>
-                                <TextBlock Grid.Row="1" Grid.Column="1" Text="910"         Style="{StaticResource StatValue}"/>
-                                <TextBlock Grid.Row="2" Grid.Column="0" Text="Защита"       Style="{StaticResource StatLabel}"/>
-                                <TextBlock Grid.Row="2" Grid.Column="1" Text="320"         Style="{StaticResource StatValue}"/>
-                                <TextBlock Grid.Row="3" Grid.Column="0" Text="Скорость"     Style="{StaticResource StatLabel}"/>
-                                <TextBlock Grid.Row="3" Grid.Column="1" Text="240"         Style="{StaticResource StatValue}"/>
-                            </Grid>
-                        </StackPanel>
-                    </Grid>
+                <Border BorderBrush="{DynamicResource Border}" BorderThickness="1"
+                        Background="{DynamicResource Card}" Margin="10" Padding="12">
+                    <StackPanel>
+                        <TextBlock Text="Лунара" FontSize="22" FontWeight="Bold"/>
+                        <TextBlock Text="Маг, ур. 38"/>
+                        <TextBlock Text="Здоровье: 2100   Атака: 910   Защита: 320"/>
+                    </StackPanel>
                 </Border>
 
-                <!-- Персонаж 3 -->
-                <Border Style="{StaticResource CardStyle}">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Grid Grid.Column="0" Width="96" Height="96" Margin="0,0,22,0">
-                            <Ellipse Fill="{DynamicResource BrushGood}"/>
-                            <TextBlock Text="Т" Foreground="{DynamicResource BrushBgApp}"
-                                       FontSize="44" FontWeight="Bold"
-                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Grid>
-
-                        <StackPanel Grid.Column="1">
-                            <TextBlock Text="Тенебра" Style="{StaticResource CharName}"/>
-                            <TextBlock Text="Убийца · ур. 45" Style="{StaticResource CharClass}"/>
-
-                            <Grid Margin="0,14,0,0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/><ColumnDefinition Width="90"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/><RowDefinition/><RowDefinition/><RowDefinition/>
-                                </Grid.RowDefinitions>
-
-                                <TextBlock Grid.Row="0" Grid.Column="0" Text="Здоровье"     Style="{StaticResource StatLabel}"/>
-                                <TextBlock Grid.Row="0" Grid.Column="1" Text="1850"        Style="{StaticResource StatValue}"/>
-                                <TextBlock Grid.Row="1" Grid.Column="0" Text="Атака"        Style="{StaticResource StatLabel}"/>
-                                <TextBlock Grid.Row="1" Grid.Column="1" Text="1120"        Style="{StaticResource StatValue}"/>
-                                <TextBlock Grid.Row="2" Grid.Column="0" Text="Защита"       Style="{StaticResource StatLabel}"/>
-                                <TextBlock Grid.Row="2" Grid.Column="1" Text="260"         Style="{StaticResource StatValue}"/>
-                                <TextBlock Grid.Row="3" Grid.Column="0" Text="Скорость"     Style="{StaticResource StatLabel}"/>
-                                <TextBlock Grid.Row="3" Grid.Column="1" Text="310"         Style="{StaticResource StatValue}"/>
-                            </Grid>
-                        </StackPanel>
-                    </Grid>
+                <Border BorderBrush="{DynamicResource Border}" BorderThickness="1"
+                        Background="{DynamicResource Card}" Margin="10" Padding="12">
+                    <StackPanel>
+                        <TextBlock Text="Тенебра" FontSize="22" FontWeight="Bold"/>
+                        <TextBlock Text="Убийца, ур. 45"/>
+                        <TextBlock Text="Здоровье: 1850   Атака: 1120   Защита: 260"/>
+                    </StackPanel>
                 </Border>
 
-                <!-- Персонаж 4 -->
-                <Border Style="{StaticResource CardStyle}">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Grid Grid.Column="0" Width="96" Height="96" Margin="0,0,22,0">
-                            <Ellipse Fill="{DynamicResource BrushGold}"/>
-                            <TextBlock Text="В" Foreground="{DynamicResource BrushBgApp}"
-                                       FontSize="44" FontWeight="Bold"
-                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Grid>
-
-                        <StackPanel Grid.Column="1">
-                            <TextBlock Text="Вулканус" Style="{StaticResource CharName}"/>
-                            <TextBlock Text="Берсерк · ур. 40" Style="{StaticResource CharClass}"/>
-
-                            <Grid Margin="0,14,0,0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/><ColumnDefinition Width="90"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/><RowDefinition/><RowDefinition/><RowDefinition/>
-                                </Grid.RowDefinitions>
-
-                                <TextBlock Grid.Row="0" Grid.Column="0" Text="Здоровье"     Style="{StaticResource StatLabel}"/>
-                                <TextBlock Grid.Row="0" Grid.Column="1" Text="2750"        Style="{StaticResource StatValue}"/>
-                                <TextBlock Grid.Row="1" Grid.Column="0" Text="Атака"        Style="{StaticResource StatLabel}"/>
-                                <TextBlock Grid.Row="1" Grid.Column="1" Text="830"         Style="{StaticResource StatValue}"/>
-                                <TextBlock Grid.Row="2" Grid.Column="0" Text="Защита"       Style="{StaticResource StatLabel}"/>
-                                <TextBlock Grid.Row="2" Grid.Column="1" Text="510"         Style="{StaticResource StatValue}"/>
-                                <TextBlock Grid.Row="3" Grid.Column="0" Text="Скорость"     Style="{StaticResource StatLabel}"/>
-                                <TextBlock Grid.Row="3" Grid.Column="1" Text="180"         Style="{StaticResource StatValue}"/>
-                            </Grid>
-                        </StackPanel>
-                    </Grid>
-                </Border>
-
-            </WrapPanel>
+            </StackPanel>
         </ScrollViewer>
     </Grid>
 </Page>

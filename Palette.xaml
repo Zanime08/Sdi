@@ -1,37 +1,12 @@
-<!--
-    Цветовая палитра приложения (SDI – редактор персонажей).
-    Вынесена в отдельный словарь ресурсов и подключается на уровне
-    всего приложения (App.xaml), поэтому доступна и в главном окне,
-    и на страницах, загружаемых в Frame.
--->
+<!-- Цветовая палитра (простая) -->
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <!-- ===== Базовые цвета ===== -->
-    <Color x:Key="ColorBgApp">#12121A</Color>          <!-- фон рабочей области -->
-    <Color x:Key="ColorPanel">#1E1E2E</Color>         <!-- левая панель команд -->
-    <Color x:Key="ColorPanelHover">#2A2A3C</Color>     <!-- наведение на команду -->
-    <Color x:Key="ColorAccent">#FFB347</Color>         <!-- акцент (выделенная команда) -->
-    <Color x:Key="ColorAccent2">#7C6CFF</Color>        <!-- вторичный акцент -->
-    <Color x:Key="ColorCard">#26263A</Color>           <!-- карточка персонажа -->
-    <Color x:Key="ColorCardBorder">#3A3A52</Color>     <!-- рамка карточки -->
-    <Color x:Key="ColorText">#EDEDF2</Color>           <!-- основной текст -->
-    <Color x:Key="ColorTextMuted">#9A9AB0</Color>      <!-- приглушённый текст -->
-    <Color x:Key="ColorGood">#4CD964</Color>           <!-- зелёный (статус/покупка) -->
-    <Color x:Key="ColorGold">#FFD24C</Color>           <!-- золото (цена) -->
-    <Color x:Key="ColorDanger">#FF6B6B</Color>         <!-- красный (предупреждение) -->
-
-    <!-- ===== Кисти на основе палитры ===== -->
-    <SolidColorBrush x:Key="BrushBgApp"        Color="{StaticResource ColorBgApp}"/>
-    <SolidColorBrush x:Key="BrushPanel"        Color="{StaticResource ColorPanel}"/>
-    <SolidColorBrush x:Key="BrushPanelHover"   Color="{StaticResource ColorPanelHover}"/>
-    <SolidColorBrush x:Key="BrushAccent"       Color="{StaticResource ColorAccent}"/>
-    <SolidColorBrush x:Key="BrushAccent2"      Color="{StaticResource ColorAccent2}"/>
-    <SolidColorBrush x:Key="BrushCard"         Color="{StaticResource ColorCard}"/>
-    <SolidColorBrush x:Key="BrushCardBorder"   Color="{StaticResource ColorCardBorder}"/>
-    <SolidColorBrush x:Key="BrushText"         Color="{StaticResource ColorText}"/>
-    <SolidColorBrush x:Key="BrushTextMuted"    Color="{StaticResource ColorTextMuted}"/>
-    <SolidColorBrush x:Key="BrushGood"         Color="{StaticResource ColorGood}"/>
-    <SolidColorBrush x:Key="BrushGold"         Color="{StaticResource ColorGold}"/>
-    <SolidColorBrush x:Key="BrushDanger"       Color="{StaticResource ColorDanger}"/>
+    <SolidColorBrush x:Key="Bg"     Color="#ECECEC"/>
+    <SolidColorBrush x:Key="Panel"  Color="#4A4A4A"/>
+    <SolidColorBrush x:Key="Accent" Color="#3B7DD8"/>
+    <SolidColorBrush x:Key="Text"   Color="#222222"/>
+    <SolidColorBrush x:Key="Card"   Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="Border" Color="#BBBBBB"/>
+    <SolidColorBrush x:Key="Gold"   Color="#C9991A"/>
 </ResourceDictionary>
