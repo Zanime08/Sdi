@@ -4,9 +4,9 @@
 Создано по образцу репозитория [MishanyaGG/SDIproject](https://github.com/MishanyaGG/SDIproject),
 но под своё задание — **приложение для редактирования/просмотра персонажей**.
 
-> **Совместимость:** проект в **классическом формате** (не SDK-style) под **.NET Framework 4.7.2** —
-> открывается и собирается в старых версиях Visual Studio (2015/2017/2019 Community).
-> Без `ImplicitUsings`/`Nullable`, всё на явных `using`.
+> **Совместимость:** проект в **SDK-style** под **.NET 8** (`net8.0-windows`, WPF) —
+> открывается и собирается в **Visual Studio 2022** (с рабочей нагрузкой .NET Desktop).
+> Требуется установленный **.NET 8 SDK**.
 
 ## Задание (Практика SDI)
 - Разрешение окна **1920 × 1080**.
@@ -28,10 +28,9 @@ CharactersListPage.xaml / .cs   — страница 1.1: список перс�
 ShopPage.xaml / .cs             — страница 1.2: покупка персонажей
 SettingsPage.xaml / .cs         — страница настроек (доп. команда)
 Assets/Image/                   — логотипы команд (characters.png, shop.png, settings.png)
-Sdi.csproj / Sdi.sln           — классический WPF-проект (.NET Framework 4.7.2)
+Sdi.csproj / Sdi.sln           — проект WPF под .NET 8 (SDK-style, net8.0-windows)
 ```
 
 ## Запуск
-Открыть `Sdi.sln` в Visual Studio (2015/2017/2019) и нажать **Запуск** (F5).
-Целевая платформа — **.NET Framework 4.7.2** (при необходимости смените
-`<TargetFrameworkVersion>` в `Sdi.csproj` на `v4.6.1` / `v4.8`).
+Открыть `Sdi.sln` в **Visual Studio 2022**, убедиться что установлен **.NET 8 SDK**,
+и нажать **Запуск** (F5). Целевая платформа — `net8.0-windows`.
