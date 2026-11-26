@@ -1,44 +1,60 @@
+<!-- Страница: персонажи для покупки. x:Class связывает её с одноимённым классом C#.
+     Background задаёт фон, Foreground — цвет обычного текста. -->
 <Page x:Class="Sdi.ShopPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="Магазин"
-      Background="{DynamicResource Bg}">
+      Foreground="{StaticResource Panel}"
+      Background="{StaticResource Bg}">
 
+    <!-- Grid — таблица из двух строк; Margin — отступ от краёв страницы. -->
     <Grid Margin="20">
+        <!-- Auto — строка по высоте заголовка; * — всё оставшееся место. -->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <!-- Заголовок в строке 0. Style берёт оформление из отдельного файла. -->
         <TextBlock Grid.Row="0" Text="Магазин персонажей"
                    Style="{StaticResource PageTitle}"/>
 
+        <!-- В строке 1 размещаем список. ScrollViewer добавляет прокрутку,
+             если все карточки не помещаются по высоте. -->
         <ScrollViewer Grid.Row="1">
+            <!-- StackPanel располагает карточки вертикально, друг под другом. -->
             <StackPanel>
 
+                <!-- Карточка: Селестия. Border рисует рамку, StackPanel собирает строки. -->
                 <Border Style="{StaticResource CharacterCard}">
                     <StackPanel>
+                        <!-- TextBlock выводит текст из свойства Text. -->
                         <TextBlock Text="Селестия" Style="{StaticResource CharacterNameStyle}"/>
                         <TextBlock Text="Целитель, ур. 35"/>
                         <TextBlock Text="Цена: 1200" Style="{StaticResource PriceStyle}"/>
+                        <!-- Это только надпись: по заданию содержимое статическое. -->
                         <TextBlock Text="Купить" Style="{StaticResource BuyLabelStyle}"/>
                     </StackPanel>
                 </Border>
 
+                <!-- Карточка: Кратос. Border рисует рамку, StackPanel собирает строки. -->
                 <Border Style="{StaticResource CharacterCard}">
                     <StackPanel>
                         <TextBlock Text="Кратос" Style="{StaticResource CharacterNameStyle}"/>
                         <TextBlock Text="Танк, ур. 50"/>
                         <TextBlock Text="Цена: 2400" Style="{StaticResource PriceStyle}"/>
+                        <!-- Это только надпись: по заданию содержимое статическое. -->
                         <TextBlock Text="Купить" Style="{StaticResource BuyLabelStyle}"/>
                     </StackPanel>
                 </Border>
 
+                <!-- Карточка: Игнис. Border рисует рамку, StackPanel собирает строки. -->
                 <Border Style="{StaticResource CharacterCard}">
                     <StackPanel>
                         <TextBlock Text="Игнис" Style="{StaticResource CharacterNameStyle}"/>
                         <TextBlock Text="Огнестрел, ур. 33"/>
                         <TextBlock Text="Цена: 980" Style="{StaticResource PriceStyle}"/>
+                        <!-- Это только надпись: по заданию содержимое статическое. -->
                         <TextBlock Text="Купить" Style="{StaticResource BuyLabelStyle}"/>
                     </StackPanel>
                 </Border>

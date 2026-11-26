@@ -1,31 +1,32 @@
-using System;
-using System.Windows;
-using System.Windows.Controls;
+using System.Windows; // Window — окно, RoutedEventArgs — сведения о нажатии кнопки.
 
-namespace Sdi
+namespace Sdi // Общее имя для классов нашего проекта.
 {
+    // partial означает, что часть окна описана здесь, а другая часть — в XAML.
     public partial class MainWindow : Window
     {
-        private StackPanel _selectedEl;
-
+        // Конструктор выполняется при создании главного окна.
         public MainWindow()
         {
-            InitializeComponent();
-            _selectedEl = StackCharacters;
-            FrameArea.Source = new Uri("CharactersListPage.xaml", UriKind.Relative);
+            InitializeComponent(); // Создаём элементы, описанные в MainWindow.xaml.
+
+            // При запуске сразу показываем список персонажей внутри Frame.
+            FrameArea.Content = new CharactersListPage();
         }
 
-        private void SwithSelect(object sender, RoutedEventArgs e)
+        // Этот метод вызывается кнопкой «Персонажи» через свойство Click в XAML.
+        // sender — нажатая кнопка, e — сведения о событии. Здесь они нам не нужны.
+        private void CharactersButton_Click(object sender, RoutedEventArgs e)
         {
-            _selectedEl.Style = (Style)FindResource("ElMenu");
+            // Создаём страницу со списком и помещаем её в рабочую область окна.
+            FrameArea.Content = new CharactersListPage();
+        }
 
-            var button = (Button)sender;
-            _selectedEl = (StackPanel)button.Parent;
-            _selectedEl.Style = (Style)FindResource("SelectedButtonMenu");
-
-            var page = button.Tag as string;
-            if (!string.IsNullOrEmpty(page))
-                FrameArea.Source = new Uri(page, UriKind.Relative);
+        // Этот метод вызывается кнопкой «Магазин».
+        private void ShopButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Меняем только содержимое Frame, не открывая новое окно.
+            FrameArea.Content = new ShopPage();
         }
     }
 }

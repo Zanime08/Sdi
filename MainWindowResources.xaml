@@ -1,56 +1,59 @@
-<!-- Общие стили интерфейса (отдельный файл) -->
+<!-- Общие стили. ResourceDictionary — словарь с оформлением элементов.
+     x:Key — имя стиля, TargetType — для какого элемента он предназначен.
+     Setter задаёт одно свойство (Property) и его значение (Value).
+     StaticResource берёт кисть по имени из Palette.xaml. -->
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Style x:Key="ElMenu" TargetType="StackPanel">
-        <Setter Property="Background" Value="Transparent"/>
-    </Style>
-
+    <!-- Обычная кнопка с картинкой, без собственного шаблона.
+         Margin — внешний отступ, Padding — отступ внутри кнопки.
+         Cursor="Hand" меняет указатель мыши на руку. -->
     <Style x:Key="ButtonMenu" TargetType="Button">
-        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Margin" Value="18"/>
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <ContentPresenter/>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="Padding" Value="8"/>
+        <Setter Property="Background" Value="{StaticResource Accent}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Border}"/>
+        <Setter Property="Cursor" Value="Hand"/>
     </Style>
 
-    <Style x:Key="SelectedButtonMenu" BasedOn="{StaticResource ElMenu}" TargetType="StackPanel">
-        <Setter Property="Background" Value="{DynamicResource Accent}"/>
+    <!-- Подпись команды: светлый текст по центру панели. -->
+    <Style x:Key="MenuLabel" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource Bg}"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
     </Style>
+
+    <!-- Заголовок страницы: размер шрифта, жирное начертание, цвет и отступ. -->
     <Style x:Key="PageTitle" TargetType="TextBlock">
         <Setter Property="FontSize" Value="32"/>
         <Setter Property="FontWeight" Value="Bold"/>
-        <Setter Property="Foreground" Value="{DynamicResource Text}"/>
+        <Setter Property="Foreground" Value="{StaticResource Panel}"/>
         <Setter Property="Margin" Value="10"/>
     </Style>
 
+    <!-- Карточка: рамка толщиной 1 пиксель, фон и отступы. -->
     <Style x:Key="CharacterCard" TargetType="Border">
-        <Setter Property="BorderBrush" Value="{DynamicResource Border}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Border}"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Background" Value="{DynamicResource Card}"/>
+        <Setter Property="Background" Value="{StaticResource Card}"/>
         <Setter Property="Margin" Value="10"/>
         <Setter Property="Padding" Value="12"/>
-        <Setter Property="TextElement.Foreground" Value="{DynamicResource Text}"/>
     </Style>
 
+    <!-- Имя персонажа: крупный жирный текст зелёного цвета. -->
     <Style x:Key="CharacterNameStyle" TargetType="TextBlock">
         <Setter Property="FontSize" Value="22"/>
         <Setter Property="FontWeight" Value="Bold"/>
-        <Setter Property="Foreground" Value="{DynamicResource CharacterName}"/>
+        <Setter Property="Foreground" Value="{StaticResource CharacterName}"/>
     </Style>
 
+    <!-- Цена выделяется жирным шрифтом и тёмно-оранжевым цветом. -->
     <Style x:Key="PriceStyle" TargetType="TextBlock">
         <Setter Property="FontWeight" Value="Bold"/>
-        <Setter Property="Foreground" Value="{DynamicResource Gold}"/>
+        <Setter Property="Foreground" Value="{StaticResource Price}"/>
     </Style>
 
+    <!-- Цвет статической надписи «Купить». Это не работающая кнопка покупки. -->
     <Style x:Key="BuyLabelStyle" TargetType="TextBlock">
-        <Setter Property="Foreground" Value="{DynamicResource BuyText}"/>
+        <Setter Property="Foreground" Value="{StaticResource Price}"/>
     </Style>
 </ResourceDictionary>

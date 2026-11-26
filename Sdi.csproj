@@ -1,19 +1,25 @@
+<!-- Файл проекта: сообщает Visual Studio, как собрать программу. -->
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <!-- Оконная программа без отдельного окна консоли. -->
     <OutputType>WinExe</OutputType>
+    <!-- Используем .NET 8 для Windows. -->
     <TargetFramework>net8.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Включаем библиотеку оконного интерфейса WPF. -->
     <UseWPF>true</UseWPF>
-    <!-- Не генерировать AssemblyInfo автоматически: используем свой AssemblyInfo.cs -->
+    <!-- Компилятор предупреждает о возможном использовании пустых ссылок (null). -->
+    <Nullable>enable</Nullable>
+    <!-- Сведения о программе уже записаны вручную в AssemblyInfo.cs. -->
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <ProjectGuid>{A1B2C3D4-E5F6-4A7B-8C9D-0E1F2A3B4C5D}</ProjectGuid>
   </PropertyGroup>
 
+  <!-- Встраиваем картинки в программу, чтобы их не пришлось копировать отдельно. -->
   <ItemGroup>
+    <!-- Убираем картинки из списка обычных файлов. -->
     <None Remove="Assets\Image\characters.png" />
     <None Remove="Assets\Image\shop.png" />
+    <!-- Добавляем их как ресурсы WPF для элемента Image. -->
     <Resource Include="Assets\Image\characters.png" />
     <Resource Include="Assets\Image\shop.png" />
   </ItemGroup>

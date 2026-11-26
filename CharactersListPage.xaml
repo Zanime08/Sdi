@@ -1,29 +1,41 @@
+<!-- Страница: список персонажей с характеристиками. x:Class связывает её с одноимённым классом C#.
+     Background задаёт фон, Foreground — цвет обычного текста. -->
 <Page x:Class="Sdi.CharactersListPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="Персонажи"
-      Background="{DynamicResource Bg}">
+      Foreground="{StaticResource Panel}"
+      Background="{StaticResource Bg}">
 
+    <!-- Grid — таблица из двух строк; Margin — отступ от краёв страницы. -->
     <Grid Margin="20">
+        <!-- Auto — строка по высоте заголовка; * — всё оставшееся место. -->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <!-- Заголовок в строке 0. Style берёт оформление из отдельного файла. -->
         <TextBlock Grid.Row="0" Text="Список персонажей"
                    Style="{StaticResource PageTitle}"/>
 
+        <!-- В строке 1 размещаем список. ScrollViewer добавляет прокрутку,
+             если все карточки не помещаются по высоте. -->
         <ScrollViewer Grid.Row="1">
+            <!-- StackPanel располагает карточки вертикально, друг под другом. -->
             <StackPanel>
 
+                <!-- Карточка: Айронхарт. Border рисует рамку, StackPanel собирает строки. -->
                 <Border Style="{StaticResource CharacterCard}">
                     <StackPanel>
+                        <!-- TextBlock выводит текст из свойства Text. -->
                         <TextBlock Text="Айронхарт" Style="{StaticResource CharacterNameStyle}"/>
                         <TextBlock Text="Страж, ур. 42"/>
                         <TextBlock Text="Здоровье: 3200   Атака: 540   Защита: 780"/>
                     </StackPanel>
                 </Border>
 
+                <!-- Карточка: Лунара. Border рисует рамку, StackPanel собирает строки. -->
                 <Border Style="{StaticResource CharacterCard}">
                     <StackPanel>
                         <TextBlock Text="Лунара" Style="{StaticResource CharacterNameStyle}"/>
@@ -32,6 +44,7 @@
                     </StackPanel>
                 </Border>
 
+                <!-- Карточка: Тенебра. Border рисует рамку, StackPanel собирает строки. -->
                 <Border Style="{StaticResource CharacterCard}">
                     <StackPanel>
                         <TextBlock Text="Тенебра" Style="{StaticResource CharacterNameStyle}"/>

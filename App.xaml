@@ -1,11 +1,14 @@
+<!-- Настройки запуска приложения.
+     x:Class связывает этот файл с App.xaml.cs.
+     StartupUri указывает окно, которое откроется первым. -->
 <Application x:Class="Sdi.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Sdi"
              StartupUri="MainWindow.xaml">
+    <!-- Общие ресурсы доступны главному окну и страницам внутри Frame. -->
     <Application.Resources>
-        <!-- Палитра и стили доступны окну и обеим страницам -->
         <ResourceDictionary>
+            <!-- Подключаем два словаря: сначала цвета, затем использующие их стили. -->
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Palette.xaml"/>
                 <ResourceDictionary Source="/MainWindowResources.xaml"/>

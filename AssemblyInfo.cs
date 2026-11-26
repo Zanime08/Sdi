@@ -1,18 +1,18 @@
-using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Windows;
+using System.Reflection; // Атрибуты с названием и версией программы.
+using System.Windows; // Настройка ресурсов оформления WPF (ThemeInfo).
 
+// Сведения о программе, которые Windows может показать в свойствах файла.
 [assembly: AssemblyTitle("Sdi")]
 [assembly: AssemblyDescription("SDI · Редактор персонажей")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Sdi")]
-[assembly: AssemblyCopyright("Copyright © 2026")]
-[assembly: AssemblyTrademark("")]
+
+// Версия программы. На переключение страниц не влияет.
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
+// Стандартная настройка WPF: отдельных ресурсов для тем Windows нет,
+// общие ресурсы оформления следует искать в сборке самой программы.
 [assembly: ThemeInfo(
-    ResourceDictionaryLocation.None,            // где находятся словари ресурсов, зависящие от темы
-    ResourceDictionaryLocation.SourceAssembly   // где находится общий словарь ресурсов
+    ResourceDictionaryLocation.None,
+    ResourceDictionaryLocation.SourceAssembly
 )]

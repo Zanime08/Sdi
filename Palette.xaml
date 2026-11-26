@@ -1,44 +1,42 @@
-<!-- Палитра из задания: основной цвет и три дополнительные группы. -->
+<!-- Все 20 цветов из задания.
+     SolidColorBrush — одноцветная кисть для фона, текста или рамки.
+     x:Key — имя кисти. Color — цвет в формате #RRGGBB.
+     Например, {StaticResource Bg} берёт кисть с именем Bg из этого файла. -->
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <!-- Основной цвет -->
-    <Color x:Key="Primary">#FFE800</Color>
-    <Color x:Key="PrimaryMuted">#BFB230</Color>
-    <Color x:Key="PrimaryDark">#A69700</Color>
-    <Color x:Key="PrimaryLight">#FFEE40</Color>
-    <Color x:Key="PrimaryPale">#FFF273</Color>
+    <!-- Основной цвет: пять жёлтых оттенков. -->
+    <SolidColorBrush x:Key="Yellow" Color="#FFE800"/>
+    <!-- Border — цвет рамок карточек и кнопок. -->
+    <SolidColorBrush x:Key="Border" Color="#BFB230"/>
+    <SolidColorBrush x:Key="YellowDark" Color="#A69700"/>
+    <!-- Card — фон карточек персонажей. -->
+    <SolidColorBrush x:Key="Card" Color="#FFEE40"/>
+    <!-- Bg — общий фон окна и страниц. -->
+    <SolidColorBrush x:Key="Bg" Color="#FFF273"/>
 
-    <!-- Вторичный цвет A -->
-    <Color x:Key="SecondaryA">#00AF64</Color>
-    <Color x:Key="SecondaryAMuted">#218359</Color>
-    <Color x:Key="SecondaryADark">#007241</Color>
-    <Color x:Key="SecondaryALight">#36D792</Color>
-    <Color x:Key="SecondaryAPale">#61D7A4</Color>
+    <!-- Вторичный цвет A: пять зелёных оттенков. -->
+    <SolidColorBrush x:Key="Green" Color="#00AF64"/>
+    <SolidColorBrush x:Key="GreenMuted" Color="#218359"/>
+    <!-- CharacterName — цвет имени персонажа. -->
+    <SolidColorBrush x:Key="CharacterName" Color="#007241"/>
+    <SolidColorBrush x:Key="GreenLight" Color="#36D792"/>
+    <SolidColorBrush x:Key="GreenPale" Color="#61D7A4"/>
 
-    <!-- Вторичный цвет B -->
-    <Color x:Key="SecondaryB">#FF4900</Color>
-    <Color x:Key="SecondaryBMuted">#BF5930</Color>
-    <Color x:Key="SecondaryBDark">#A62F00</Color>
-    <Color x:Key="SecondaryBLight">#FF7640</Color>
-    <Color x:Key="SecondaryBPale">#FF9B73</Color>
+    <!-- Вторичный цвет B: пять оранжевых оттенков. -->
+    <SolidColorBrush x:Key="Orange" Color="#FF4900"/>
+    <SolidColorBrush x:Key="OrangeMuted" Color="#BF5930"/>
+    <!-- Price — цвет цены и надписи «Купить». -->
+    <SolidColorBrush x:Key="Price" Color="#A62F00"/>
+    <SolidColorBrush x:Key="OrangeLight" Color="#FF7640"/>
+    <SolidColorBrush x:Key="OrangePale" Color="#FF9B73"/>
 
-    <!-- Дополнительный цвет -->
-    <Color x:Key="Complementary">#530FAD</Color>
-    <Color x:Key="ComplementaryMuted">#4F2982</Color>
-    <Color x:Key="ComplementaryDark">#330570</Color>
-    <Color x:Key="ComplementaryLight">#8243D6</Color>
-    <Color x:Key="ComplementaryPale">#996AD6</Color>
-
-    <!-- Кисти для элементов интерфейса -->
-    <SolidColorBrush x:Key="Bg" Color="{StaticResource PrimaryPale}"/>
-    <SolidColorBrush x:Key="Panel" Color="{StaticResource ComplementaryDark}"/>
-    <SolidColorBrush x:Key="Accent" Color="{StaticResource Complementary}"/>
-    <SolidColorBrush x:Key="Text" Color="{StaticResource ComplementaryDark}"/>
-    <SolidColorBrush x:Key="Card" Color="{StaticResource PrimaryLight}"/>
-    <SolidColorBrush x:Key="Border" Color="{StaticResource PrimaryMuted}"/>
-    <SolidColorBrush x:Key="Gold" Color="{StaticResource SecondaryBDark}"/>
-    <SolidColorBrush x:Key="CharacterName" Color="{StaticResource SecondaryADark}"/>
-    <SolidColorBrush x:Key="BuyText" Color="{StaticResource SecondaryBDark}"/>
-    <SolidColorBrush x:Key="MenuText" Color="{StaticResource PrimaryPale}"/>
+    <!-- Дополнительный цвет: пять фиолетовых оттенков. -->
+    <!-- Accent — фон кнопок меню. -->
+    <SolidColorBrush x:Key="Accent" Color="#530FAD"/>
+    <SolidColorBrush x:Key="PurpleMuted" Color="#4F2982"/>
+    <!-- Panel — фон меню; этой же кистью рисуем обычный текст на светлом фоне. -->
+    <SolidColorBrush x:Key="Panel" Color="#330570"/>
+    <SolidColorBrush x:Key="PurpleLight" Color="#8243D6"/>
+    <SolidColorBrush x:Key="PurplePale" Color="#996AD6"/>
 </ResourceDictionary>

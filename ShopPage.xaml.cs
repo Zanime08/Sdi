@@ -1,14 +1,15 @@
-using System.Windows.Controls;
+using System.Windows.Controls; // Подключаем класс Page — страницу WPF.
 
-namespace Sdi
+namespace Sdi // То же пространство имён, что и у главного окна.
 {
-    /// <summary>
-    /// Страница 1.2 — покупка персонажей (статический контент).
-    /// </summary>
+    // Страница «магазин персонажей» показывается внутри Frame главного окна.
+    // partial связывает этот класс с разметкой в ShopPage.xaml.
     public partial class ShopPage : Page
     {
+        // Конструктор вызывается при создании страницы через new ShopPage().
         public ShopPage()
         {
+            // Создаём карточки и текст, описанные в XAML этой страницы.
             InitializeComponent();
         }
     }

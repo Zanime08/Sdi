@@ -1,42 +1,43 @@
+<!-- Главное окно. x:Class связывает разметку с классом MainWindow в C#.
+     xmlns подключает элементы WPF, xmlns:x — служебные возможности XAML.
+     Width и Height задают размер окна, Title — надпись в его заголовке.
+     StaticResource берёт готовый цвет или стиль по имени из словарей ресурсов. -->
 <Window x:Class="Sdi.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Редактор персонажей" Height="1080" Width="1920"
         WindowStartupLocation="CenterScreen"
-        Background="{DynamicResource Bg}">
+        Background="{StaticResource Bg}">
 
+    <!-- Grid делит окно на колонки: 220 пикселей для меню, * — всё оставшееся место. -->
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="220"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Левая вертикальная полоска команд -->
-        <Grid Grid.Column="0" Background="{DynamicResource Panel}">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+        <!-- StackPanel размещает команды друг под другом в левой колонке (номер 0). -->
+        <StackPanel Grid.Column="0" Background="{StaticResource Panel}">
+            <!-- Button — кнопка; Click указывает метод из MainWindow.xaml.cs.
+                 Image показывает картинку из папки проекта.
+                 Style подключает оформление из MainWindowResources.xaml. -->
+            <Button Style="{StaticResource ButtonMenu}" Click="CharactersButton_Click">
+                <Image Source="/Assets/Image/characters.png"/>
+            </Button>
+            <!-- TextBlock — текстовая подпись под кнопкой. -->
+            <TextBlock Text="Персонажи" Style="{StaticResource MenuLabel}"/>
 
-            <StackPanel Grid.Row="0" x:Name="StackCharacters" Style="{StaticResource SelectedButtonMenu}">
-                <Button x:Name="BtnCharacters" Tag="CharactersListPage.xaml"
-                        Style="{StaticResource ButtonMenu}" Click="SwithSelect">
-                    <Image Source="/Assets/Image/characters.png"/>
-                </Button>
-                <TextBlock Text="Персонажи" HorizontalAlignment="Center" Foreground="{DynamicResource MenuText}"/>
-            </StackPanel>
+            <!-- Вторая команда открывает магазин в той же рабочей области. -->
+            <Button Style="{StaticResource ButtonMenu}" Click="ShopButton_Click">
+                <Image Source="/Assets/Image/shop.png"/>
+            </Button>
+            <TextBlock Text="Магазин" Style="{StaticResource MenuLabel}"/>
+        </StackPanel>
 
-            <StackPanel Grid.Row="1" x:Name="StackShop" Style="{StaticResource ElMenu}">
-                <Button x:Name="BtnShop" Tag="ShopPage.xaml"
-                        Style="{StaticResource ButtonMenu}" Click="SwithSelect">
-                    <Image Source="/Assets/Image/shop.png"/>
-                </Button>
-                <TextBlock Text="Магазин" HorizontalAlignment="Center" Foreground="{DynamicResource MenuText}"/>
-            </StackPanel>
-        </Grid>
-
-        <!-- Рабочая область -->
-        <Frame x:Name="FrameArea" Grid.Column="1" Background="{DynamicResource Bg}"
+        <!-- Frame — область для страниц. x:Name позволяет обратиться к ней из C#.
+             Grid.Column="1" помещает её в правую колонку.
+             Hidden скрывает стандартную панель переходов «назад/вперёд». -->
+        <Frame x:Name="FrameArea" Grid.Column="1" Background="{StaticResource Bg}"
                NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
